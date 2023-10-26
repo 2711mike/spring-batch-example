@@ -1,0 +1,2 @@
+select all the nts in the folder,
+ then right klick them and click on install

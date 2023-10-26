@@ -1,0 +1,250 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color:#2F3035;
+    background-image: url(images/shutterstock_1697986.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-size: 1370px;
+    transition: 15s;
+
+    animation-name: animate;
+    animation-direction: alternate-reverse;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animate{
+    0%
+    {
+        background-image: url(images/asset-management-webpage.jpg);
+    }
+    20%
+    {
+        background-image:  url(images/GMS.jpg);  
+    }
+    40%
+    {
+        background-image:  url(images/Picture1-5.jpg);
+    }
+    60%
+    {
+        background-image:  url(images/shutterstock_1697986.JPG);
+    }
+    80%
+    {
+        background-image: url(images/img.jpg);
+    }
+    100%
+    {
+        background-image:  url(images/img2.jpg);
+    }
+}
+
+.content {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-transform: uppercase;
+}
+
+.content h1{
+    color: black;
+    letter-spacing: 10px;  
+    font-style: solid;
+    font-family: cursive;
+    font-family: American Captain;
+}
+
+button{
+    width: 200px;
+    padding: 15px;
+    margin: 20px 5px;
+    border-radius: 25px;
+    text-align: center;
+    color: black;
+    border: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #750000 ;
+}
+button:hover{
+background: #750000;
+    transition: 0.5s;
+}
+button:hover{
+    color: #750000;
+}
+
+.menu-bar img{
+    float: left;
+    width: 160px;
+    margin-top: -10px;
+    height: auto;
+    cursor: pointer;                                                                                                               ;
+}
+.menu-bar {
+   text-align: center;
+}
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+
+.menu-bar ul li {
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a {
+    font-size: 12px;;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+
+a {
+    color: white;
+    font-size: 15px;
+    text-decoration: solid;
+}
+
+.active , .menu-bar ul li:hover
+{
+    background: #750000;
+    border-radius: 0px;
+}
+
+.menu-bar .fa
+{
+    margin-right: 8px;
+}
+    
+.sub-menu-1
+{
+    display: none;
+}
+
+.menu-bar li:hover .sub-menu-1
+{
+    display: block;
+    position: absolute;
+    background: #750000;
+    margin-left: -15px;
+    margin-top: 15px;
+}
+
+.menu-bar li:hover .sub-menu-1 ul
+{
+    display: block;
+    margin: 10px;
+}
+.menu-bar li:hover .sub-menu-1 ul li
+{
+width: 150px;
+padding: 10px;
+border-bottom: 1px dotted #fff;
+background: transparent;
+border-radius: 0;
+text-align: left;
+}
+.menu-bar li:hover .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+}
+.menu-bar li:hover .sub-menu-1 ul li a:hover
+{
+    color: black;
+}
+
+.sub-menu-2
+{
+    display: none;
+}
+
+.menu-bar li:hover .sub-menu-2
+{
+    display: block;
+    position: absolute;
+    background: #750000;
+    margin-left: -15px;
+    margin-top: 15px;
+}
+
+.menu-bar li:hover .sub-menu-2 ul
+{
+    display: block;
+    margin: 10px;
+}
+.menu-bar li:hover .sub-menu-2 ul li
+{
+width: 150px;
+padding: 10px;
+border-bottom: 1px dotted #fff;
+background: transparent;
+border-radius: 0;
+text-align: left;
+}
+.menu-bar li:hover .sub-menu-2 ul li:last-child
+{
+    border-bottom: none;
+}
+.menu-bar li:hover .sub-menu-2 ul li a:hover
+{
+    color: black;
+}
+
+.sub-menu-3
+{
+    display: none;
+}
+
+.menu-bar li:hover .sub-menu-3
+{
+    display: block;
+    position: absolute;
+    background: #750000;
+    margin-left: -15px;
+    margin-top: 15px;
+}
+
+.menu-bar li:hover .sub-menu-3 ul
+{
+    display: block;
+    margin: 10px;
+}
+.menu-bar li:hover .sub-menu-3 ul li
+{
+width: 150px;
+padding: 10px;
+border-bottom: 1px dotted #fff;
+background: transparent;
+border-radius: 0;
+text-align: left;
+}
+.menu-bar li:hover .sub-menu-3 ul li:last-child
+{
+    border-bottom: none;
+}
+.menu-bar li:hover .sub-menu-3 ul li a:hover
+{
+    color: black;
+}
+
+
+    
