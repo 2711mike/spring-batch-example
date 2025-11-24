@@ -1,0 +1,16 @@
+# Application Config
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: spring-batch-backend
+  config:
+    import:
+      - classpath:cors.yaml
+      - classpath:mail.yaml
+      - classpath:batch.yaml
+      - classpath:flyway.yaml
+      - classpath:postgresql.yaml

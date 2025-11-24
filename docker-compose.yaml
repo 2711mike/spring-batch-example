@@ -1,0 +1,57 @@
+# Services
+services:
+
+  # Spring Batch Frontend
+  spring_batch_frontend:
+    build: 
+      context: ./spring-batch-frontend/.
+      args:
+        NEXT_PUBLIC_BACKEND_URL: http://localhost:8080
+    container_name: spring_batch_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - spring_batch_backend
+    networks:
+      - my-network
+
+  # Spring Batch Backend
+  spring_batch_backend:
+    build: ./spring-batch-backend/.
+    container_name: spring_batch_backend
+    environment:
+      - DATABASE_URL=jdbc:postgresql://postgres_batch_db:5432/batch_db
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres_batch_db
+    networks:
+      - my-network
+
+  # PostgreSQL
+  postgres_batch_db:
+    image: postgres:15.2
+    container_name: postgres_batch_db
+    restart: always
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+    ports:
+        - "5432:5432"
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+        - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+        - my-network
+
+
+# Volumes
+volumes:
+  postgres_data:
+
+# Networks
+networks:
+  my-network:
+    driver: bridge

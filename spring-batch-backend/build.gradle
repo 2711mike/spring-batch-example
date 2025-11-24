@@ -1,0 +1,72 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.7'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.furkankayam'
+version = 'v.0.1'
+description = 'Spring Batch Backend Example'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+    flywayVersion = '11.17.0'
+    mapstructVersion = '1.6.3'
+    springdocVersion = '2.8.0'
+    lombokMapstructBindingVersion = '0.2.0'
+}
+
+dependencies {
+    // --- Core ---
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+
+    // --- Flyway ---
+    implementation "org.flywaydb:flyway-core:${flywayVersion}"
+    implementation "org.flywaydb:flyway-database-postgresql:${flywayVersion}"
+
+    // --- Database ---
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // --- Lombok ---
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // --- MapStruct ---
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
+
+    // --- Development Tools ---
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // --- Swagger / OpenAPI ---
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
+
+    // --- Test ---
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.springframework.batch:spring-batch-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

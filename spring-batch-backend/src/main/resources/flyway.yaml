@@ -1,0 +1,6 @@
+# Flyway Config
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
